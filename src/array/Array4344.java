@@ -7,6 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+/*
+* BufferedReader
+* StringTokenizer
+* 이중 List
+* String.format 이용해서 원하는 소수점만 표현
+* */
+
 // 평균은 넘겠지
 public class Array4344  {
     public static void main(String[] args) throws IOException {
