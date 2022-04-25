@@ -1,35 +1,20 @@
+package array;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+// 평균은 넘겠지
+public class Array4344  {
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        Scanner sc = new Scanner(System.in);
 
-//        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
-        StringTokenizer st2;
-
-
-
 
         int limit = Integer.parseInt(br.readLine());
-
-//        String input = br.readLine();
-//        String input2 = br.readLine();
-//        String line = br.readLine();
-
-//        int a = Integer.parseInt(input.substring(0, input.indexOf(" ")));
-//        int b = Integer.parseInt(input.substring(input.indexOf(" ") + 1));
-
 
 
 //        첫째 줄에는 테스트 케이스의 개수 C가 주어진다.
@@ -62,7 +47,6 @@ public class Main {
             List<String> list = sList.get(i);
             String s = list.get(0);
 
-//            System.out.println(s);
 
             st = new StringTokenizer(s, " ");
 
@@ -94,39 +78,6 @@ public class Main {
 
 
         }
-
-
-
-//        System.out.println(String.format("%.3f", d));
-
-
-
-
-
-
-
-
-
-
-//        br.close();
-
-
-
-
-//        System.out.println(sb);
-
-
-
-
-//        Scanner sc = new Scanner(System.in);
-//
-//        int a = sc.nextInt();
-
-//        sc.close();
-
-
-
-
 
 
     }
