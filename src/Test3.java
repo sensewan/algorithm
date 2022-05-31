@@ -160,7 +160,7 @@ public class Test3 {
             System.out.println(checkUpdate);
         }
         if(global_origin_grid_no != null){
-            checkUpdate = checkUpdate++;
+            checkUpdate++;
             System.out.println("ggg");
             System.out.println(checkUpdate);
         }
