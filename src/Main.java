@@ -44,9 +44,13 @@ public class Main {
 
         System.out.println(limit);
 
+        System.out.println(arithmetic(limit));
 
 
-        List<List<String>> sList = new ArrayList<List<String>>(limit);
+
+
+
+//        List<List<String>> sList = new ArrayList<List<String>>(limit);
 
 
 
@@ -62,6 +66,33 @@ public class Main {
 //        sc.close();
 
 
+    }
+
+
+    public static int arithmetic(int num) {
+
+        int cnt = 0;
+
+        if(num < 100) {
+            return num;
+        }
+        cnt = 99;
+
+        // 백의 자릿수 = i / 100
+        // 십의 자릿수 = (i / 10) % 10
+        // 일의 자릿수 = i % 10
+
+        for(int i=100; i<=num; i++) {
+            int bak = i / 100;
+            int ten = (i / 10) % 10;
+            int il = i % 10;
+
+            if((bak - ten) == (ten - il)) {
+                cnt++;
+            }
+        }
+
+        return cnt;
     }
 
 }

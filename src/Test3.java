@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -166,6 +167,25 @@ public class Test3 {
         }
         System.out.println(checkUpdate);
 
+        System.out.println("\n---------------------------------------\n");
+
+//        String result_c1 = null;
+        String result_c1 = "0";
+
+        if(result_c1 == null || !result_c1.equals("1")){
+            System.out.println("걸림");
+        }else {
+            System.out.println("통과");
+        }
+
+        System.out.println();
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("key1", "맵111");
+        map.put("key2", "맵222");
+
+        System.out.println(map);
+        System.out.println(map.get("key2"));
 
 
 
