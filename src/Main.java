@@ -20,7 +20,9 @@ public class Main {
 
 
 
-        int limit = Integer.parseInt(br.readLine());
+//        int limit = Integer.parseInt(br.readLine());
+
+        String str = br.readLine();
 
 //        String input = br.readLine();
 //        String input2 = br.readLine();
@@ -42,9 +44,9 @@ public class Main {
         // 210 -> 105,
         // 1000 -> 144,
 
-        System.out.println(limit);
+        System.out.println(str.charAt(0));
 
-        System.out.println(arithmetic(limit));
+
 
 
 
