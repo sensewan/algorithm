@@ -5,8 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-// 숫자의 합
-public class String11720 {
+/*
+*
+* */
+
+// 알파벳 찾기
+public class String10809 {
     public static void main(String[] args) throws IOException {
 
 
