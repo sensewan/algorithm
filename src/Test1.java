@@ -29,6 +29,32 @@ public class Test1 {
 
         System.out.println(nowDateTime);
 
+        System.out.println();
+
+        String test1 = "9";
+//        String test2 = "1";
+//        String test2 = null;
+
+//        if (test1 == null || test2 == null){
+//            System.out.println("걸림");
+//        } else {
+//            System.out.println("안 걸림");
+//        }
+
+        if (!test1.contains("0") && !test1.contains("1")){
+            System.out.println("걸림");
+        } else {
+            System.out.println("안 걸림");
+        }
+
+        String test3 = "17:00";
+        int t1 = 0;
+        t1 = Integer.parseInt(test3.split(":")[0]);
+        System.out.println(t1);
+
+
+
+
 
 //        String bb = "RC123";
 //        if (bb.startsWith("RC")) {
