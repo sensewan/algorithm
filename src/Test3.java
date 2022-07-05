@@ -203,6 +203,14 @@ public class Test3 {
         System.out.println(map);
         System.out.println(map.get("key2"));
 
+        System.out.println();
+
+
+        String s2 = "3 ABC";
+        int nn = Integer.parseInt(s2.split(" ")[0]);
+
+        System.out.println(nn);
+
 
 
 
