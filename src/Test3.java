@@ -142,9 +142,11 @@ public class Test3 {
 
         System.out.println();
 
-        BigDecimal total_amt = new BigDecimal(100.123);
+        BigDecimal total_amt = new BigDecimal(10000);
         BigDecimal loyal_amt = BigDecimal.ZERO;
-        BigDecimal loyal_amt2 = new BigDecimal(10);
+        BigDecimal loyal_amt2 = new BigDecimal(0.1);
+        BigDecimal global_suggest_goods_price = new BigDecimal(10000.0);
+        BigDecimal admin_page_fee_rate = new BigDecimal(0.1);
 
         System.out.println(total_amt.subtract(loyal_amt2).setScale(2, RoundingMode.FLOOR));
         System.out.println(total_amt.subtract(loyal_amt2).intValue());
@@ -166,6 +168,20 @@ public class Test3 {
             System.out.println(checkUpdate);
         }
         System.out.println(checkUpdate);
+        System.out.println();
+
+        System.out.println(total_amt.multiply(loyal_amt2).setScale(0, RoundingMode.FLOOR));
+
+        System.out.println();
+
+        // 수수료 금액
+        BigDecimal global_fee_sum_price = global_suggest_goods_price.multiply(admin_page_fee_rate).setScale(0, RoundingMode.FLOOR);
+        // 수수료 포함 상품 결제금액
+        BigDecimal global_total_fee_goods_price = global_suggest_goods_price.add(global_fee_sum_price);
+
+        System.out.println(global_fee_sum_price);
+        System.out.println(global_total_fee_goods_price);
+
 
         System.out.println("\n---------------------------------------\n");
 
