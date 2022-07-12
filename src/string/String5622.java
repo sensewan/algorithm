@@ -1,10 +1,20 @@
+package string;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.StringTokenizer;
 
-public class Main {
+
+/*
+* 1. 리스트 초기화
+* */
+
+// 단어의 개수
+public class String5622 {
     public static void main(String[] args) throws IOException {
 
 //        전화를 걸고 싶은 번호가 있다면, 숫자를 하나를 누른 다음에 금속 핀이 있는 곳 까지 시계방향으로 돌려야 한다.
@@ -27,15 +37,7 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-//        Scanner sc = new Scanner(System.in);
-
-//        StringBuilder sb = new StringBuilder();
-//        StringTokenizer st;
-
-//        int limit = Integer.parseInt(br.readLine());
         String a = br.readLine();
-//        st = new StringTokenizer(a);
-
 
         List<String> dial = Arrays.asList("1", "2:ABC", "3:DEF", "4:GHI", "5:JKL", "6:MNO", "7:PQRS", "8:TUV", "9:WXYZ", "0");
 
@@ -56,37 +58,12 @@ public class Main {
                     }
                 }
 
-
             }
         }
 
-
         System.out.println(time);
-
-
-
-
-
-
-//        String str = br.readLine();
-
-//        String input = br.readLine();
-//        String input2 = br.readLine();
-//        String line = br.readLine();
-
-//        int a = Integer.parseInt(input.substring(0, input.indexOf(" ")));
-//        int b = Integer.parseInt(input.substring(input.indexOf(" ") + 1));
-
-//        List<List<String>> sList = new ArrayList<List<String>>(limit);
-
 
         br.close();
 
-//        sc.close();
-
-
     }
-
-
-
 }
