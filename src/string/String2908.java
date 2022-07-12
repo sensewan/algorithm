@@ -1,3 +1,5 @@
+package string;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+
+
+/*
+* 1. 문자열 거꾸로 하기 (reverse)
+* */
+
+// 상수
+public class String2908 {
     public static void main(String[] args) throws IOException {
 
 //        상근이의 동생 상수는 수학을 정말 못한다. 상수는 숫자를 읽는데 문제가 있다. 이렇게 수학을 못하는 상수를 위해서 상근이는 수의 크기를 비교하는 문제를 내주었다.
@@ -18,22 +27,17 @@ public class Main {
 
 //        첫째 줄에 상수의 대답을 출력한다.
 
-
 //        734 893   ->  437
 //        221 231    ->  132
 //        839 237     ->  938
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-//        Scanner sc = new Scanner(System.in);
 
-//        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
-//        int limit = Integer.parseInt(br.readLine());
         String a = br.readLine();
         st = new StringTokenizer(a);
-
 
         List<String> list = new ArrayList<>();
 
@@ -67,26 +71,8 @@ public class Main {
 
 
 
-
-//        String str = br.readLine();
-
-//        String input = br.readLine();
-//        String input2 = br.readLine();
-//        String line = br.readLine();
-
-//        int a = Integer.parseInt(input.substring(0, input.indexOf(" ")));
-//        int b = Integer.parseInt(input.substring(input.indexOf(" ") + 1));
-
-//        List<List<String>> sList = new ArrayList<List<String>>(limit);
-
-
         br.close();
-
-//        sc.close();
 
 
     }
-
-
-
 }
