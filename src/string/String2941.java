@@ -1,11 +1,19 @@
+package string;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.StringTokenizer;
 
-public class Main {
+
+/*
+* 1. chartAt, if문 활용
+* */
+
+// 크로아티아 알파벳
+public class String2941 {
     public static void main(String[] args) throws IOException {
 
 //        예전에는 운영체제에서 크로아티아 알파벳을 입력할 수가 없었다. 따라서, 다음과 같이 크로아티아 알파벳을 변경해서 입력했다.
@@ -17,7 +25,7 @@ public class Main {
 
 //        입력으로 주어진 단어가 몇 개의 크로아티아 알파벳으로 이루어져 있는지 출력한다.
 
-//          c=, c-, dz=, d-, lj, nj, s=, z=
+//        c=, c-, dz=, d-, lj, nj, s=, z=
 
 //        ljes=njak     ->      6,
 //        ddz=z=      ->      3,
@@ -28,15 +36,10 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-//        Scanner sc = new Scanner(System.in);
 
-//        StringBuilder sb = new StringBuilder();
-//        StringTokenizer st;
 
         String str = br.readLine();
 
-//        int limit = Integer.parseInt(br.readLine());
-//        st = new StringTokenizer(a);
 
         int len = str.length();
         int count = 0;
@@ -86,29 +89,7 @@ public class Main {
 
         System.out.println(count);
 
-
-
-
-
-
-
-//        String input = br.readLine();
-//        String input2 = br.readLine();
-//        String line = br.readLine();
-
-//        int a = Integer.parseInt(input.substring(0, input.indexOf(" ")));
-//        int b = Integer.parseInt(input.substring(input.indexOf(" ") + 1));
-
-//        List<List<String>> sList = new ArrayList<List<String>>(limit);
-
-
         br.close();
 
-//        sc.close();
-
-
     }
-
-
-
 }
