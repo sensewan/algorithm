@@ -6,85 +6,76 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
     public static void main(String[] args) throws IOException {
 
-//        예전에는 운영체제에서 크로아티아 알파벳을 입력할 수가 없었다. 따라서, 다음과 같이 크로아티아 알파벳을 변경해서 입력했다.
-//        예를 들어, ljes=njak은 크로아티아 알파벳 6개(lj, e, š, nj, a, k)로 이루어져 있다. 단어가 주어졌을 때, 몇 개의 크로아티아 알파벳으로 이루어져 있는지 출력한다.
-//        dž는 무조건 하나의 알파벳으로 쓰이고, d와 ž가 분리된 것으로 보지 않는다. lj와 nj도 마찬가지이다. 위 목록에 없는 알파벳은 한 글자씩 센다.
+//        그룹 단어란 단어에 존재하는 모든 문자에 대해서, 각 문자가 연속해서 나타나는 경우만을 말한다.
+//        예를 들면, ccazzzzbb는 c, a, z, b가 모두 연속해서 나타나고, kin도 k, i, n이 연속해서 나타나기 때문에 그룹 단어이지만,
+//        aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.
 
-//        첫째 줄에 최대 100글자의 단어가 주어진다. 알파벳 소문자와 '-', '='로만 이루어져 있다.
-//        단어는 크로아티아 알파벳으로 이루어져 있다. 문제 설명의 표에 나와있는 알파벳은 변경된 형태로 입력된다.
+//        단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.
 
-//        입력으로 주어진 단어가 몇 개의 크로아티아 알파벳으로 이루어져 있는지 출력한다.
+//        3
+//        happy
+//        new
+//        year          ->      3
 
-//          c=, c-, dz=, d-, lj, nj, s=, z=
+//        4
+//        aba
+//        abab
+//        abcabc
+//        a             ->      1
 
-//        ljes=njak     ->      6,
-//        ddz=z=      ->      3,
-//        nljj      ->      3,
-//        c=c=      ->      2,
-//        dz=ak     ->      3
+//        5
+//        ab
+//        aa
+//        aca
+//        ba
+//        bb            ->      4
+
+//        2
+//        yzyzy
+//        zyzyz         ->      0
 
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 //        Scanner sc = new Scanner(System.in);
 
 //        StringBuilder sb = new StringBuilder();
 //        StringTokenizer st;
 
-        String str = br.readLine();
+        int limit = Integer.parseInt(br.readLine());
 
-//        int limit = Integer.parseInt(br.readLine());
-//        st = new StringTokenizer(a);
-
-        int len = str.length();
         int count = 0;
+        for(int i=0; i<limit; i++) {
 
-        for (int i = 0; i < len; i++) {
+            String str = br.readLine();
 
-            char ch = str.charAt(i);
+            boolean[] checkList = new boolean[26];
+            int prev = 0;
 
-            if(ch == 'c' && i < len - 1) {			// 만약 ch 가 c 라면?
-                //만약 ch 다음 문자가 '=' 또는 '-' 이라면?
-                if(str.charAt(i + 1) == '=' || str.charAt(i + 1) == '-') {
-                    // i+1 까지가 하나의 문자이므로 다음 문자를 건너 뛰기 위해 1 증가
-                    i++;
-                }
+            for(int j=0; j<str.length(); j++) {
 
-            }
+                int now = str.charAt(j);
 
-            else if(ch == 'd' && i < len - 1) {
-                if(str.charAt(i + 1) == '-') {	// d- 일 경우
-                    i++;
-                }
-                else if(str.charAt(i + 1) == 'z' && i < len - 2) {
+                if (prev != now) {
 
-                    if(str.charAt(i + 2) == '=') {	// dz= 일 경우
-                        i += 2;
+                    if(checkList[str.charAt(j) - 'a'] == false) {
+                        prev = now;
                     }
                 }
-            }
-
-            else if((ch == 'l' || ch == 'n') && i < len - 1) {
-                if(str.charAt(i + 1) == 'j') {	// lj 또는 nj 일 경우
-                    i++;
-                }
-            }
-
-
-            else if((ch == 's' || ch == 'z') && i < len - 1) {
-                if(str.charAt(i + 1) == '=') {	// s= 또는z= 일 경우
-                    i++;
-                }
 
             }
 
-            count++;
 
         }
 
-        System.out.println(count);
+
+//        st = new StringTokenizer(a);
+
 
 
 
@@ -109,6 +100,41 @@ public class Main {
 
     }
 
+
+    public static boolean check() throws IOException {
+        boolean[] check = new boolean[26];
+        int prev = 0;
+
+        String str = br.readLine();
+
+        for(int i = 0; i < str.length(); i++) {
+
+            int now = str.charAt(i);	// i 번째 문자 저장 (현재 문자)
+
+            // 앞선 문자와 i 번째 문자가 같지 않다면?
+            if (prev != now) {
+
+                // 해당 문자가 처음 나오는 경우 (false 인 경우)
+                if ( check[now - 'a'] == false ) {
+                    check[now - 'a'] = true;		// true 로 바꿔준다
+                    prev = now;					// 다음 턴을 위해 prev 도 바꿔준다
+                }
+
+                // 해당 문자가 이미 나온 적이 있는 경우 (그룹단어가 아니게 됨)
+                else {
+                    return false;	//함수 종료
+                }
+            }
+
+
+            // 앞선 문자와 i 번째 문자가 같다면? (연속된 문자)
+            // else 문은 없어도 됨
+            else {
+                continue;
+            }
+        }
+        return true;
+    }
 
 
 }

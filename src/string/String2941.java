@@ -3,13 +3,10 @@ package string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
 
 
 /*
-* 1. chartAt, if문 활용
+* 1. chartAt, if문 활
 * */
 
 // 크로아티아 알파벳
