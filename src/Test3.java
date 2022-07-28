@@ -145,7 +145,7 @@ public class Test3 {
         BigDecimal total_amt = new BigDecimal(10000);
         BigDecimal loyal_amt = BigDecimal.ZERO;
         BigDecimal loyal_amt2 = new BigDecimal(0.1);
-        BigDecimal global_suggest_goods_price = new BigDecimal(10000.0);
+        BigDecimal global_suggest_goods_price = new BigDecimal(0.02);
         BigDecimal admin_page_fee_rate = new BigDecimal(0.1);
 
         System.out.println(total_amt.subtract(loyal_amt2).setScale(2, RoundingMode.FLOOR));
@@ -175,41 +175,106 @@ public class Test3 {
         System.out.println();
 
         // 수수료 금액
-        BigDecimal global_fee_sum_price = global_suggest_goods_price.multiply(admin_page_fee_rate).setScale(0, RoundingMode.FLOOR);
+        BigDecimal global_fee_sum_price = global_suggest_goods_price.multiply(admin_page_fee_rate).setScale(8, RoundingMode.FLOOR).stripTrailingZeros();
         // 수수료 포함 상품 결제금액
-        BigDecimal global_total_fee_goods_price = global_suggest_goods_price.add(global_fee_sum_price);
+        BigDecimal global_total_fee_goods_price = global_suggest_goods_price.add(global_fee_sum_price).setScale(8,RoundingMode.FLOOR).stripTrailingZeros();
 
         System.out.println(global_fee_sum_price);
         System.out.println(global_total_fee_goods_price);
 
 
+        System.out.println();
+        System.out.println("================== 리스트 만들기 ======================");
+        System.out.println();
+
+//        [{gs_id=13, gcode=1657787715299, quantity=1, goodstype=digital_nft, grid_publication=0, nid_no=null, token_id=null, grid_no=null, joint_no=null, goods_price=0.01, fee_unit_price=0.001}]
+        List<Object> testList = new ArrayList<Object>();
+
+        Map<String, Object> testMap = new HashMap<String, Object>();
+
+        testMap.put("gs_id", "13");
+        testMap.put("gcode", "1657787715299");
+        testMap.put("quantity", "1");
+        testMap.put("goodstype", "digital_nft");
+        testMap.put("grid_publication", "0");
+        testMap.put("nid_no", null);
+        testMap.put("token_id", null);
+        testMap.put("grid_no", null);
+        testMap.put("joint_no", null);
+        testMap.put("goods_price", "0.01");
+        testMap.put("fee_unit_price", "0.001");
+
+        testList.add(testMap);
+
+        System.out.println(testList);
+        System.out.println(testList.get(0));
+        Map<String, Object> goodsDetail = (Map<String, Object>) testList.get(0);
+        System.out.println(goodsDetail);
+        System.out.println(goodsDetail.get("gs_id"));
+
+
         System.out.println("\n---------------------------------------\n");
 
 //        String result_c1 = null;
-        String result_c1 = "0";
+//        String result_c1 = "0";
+//
+//        if(result_c1 == null || !result_c1.equals("1")){
+//            System.out.println("걸림");
+//        }else {
+//            System.out.println("통과");
+//        }
+//
+//        System.out.println();
+//
+//        Map<String, String> map = new HashMap<String, String>();
+//        map.put("key1", "맵111");
+//        map.put("key2", "맵222");
+//
+//        System.out.println(map);
+//        System.out.println(map.get("key2"));
+//
+//        System.out.println();
+//
+//
+//        String s2 = "3 ABC";
+//        int nn = Integer.parseInt(s2.split(" ")[0]);
+//
+//        System.out.println(nn);
 
-        if(result_c1 == null || !result_c1.equals("1")){
-            System.out.println("걸림");
-        }else {
-            System.out.println("통과");
+        String result_category = null;
+        String methodName ="nftMyOfferCancel";
+
+
+        if(result_category == null && (!methodName.equals("nftMyOfferCancel") && !methodName.equals("myGoodsReject"))) {
+            System.out.println("걸림!");
+        } else {
+            System.out.println("안걸림!");
         }
 
-        System.out.println();
-
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("key1", "맵111");
-        map.put("key2", "맵222");
-
-        System.out.println(map);
-        System.out.println(map.get("key2"));
 
         System.out.println();
+        System.out.println("========================================");
+        System.out.println();
+
+//        String grid = "TRADE1";
+        String grid = "BUY";
+//        String grid = "BUY1";
+//        String grid = null;
+        String type = "art_piece";
+
+        int ifresultNftInfo = 0;
+        int resultGrid2 = 1;
 
 
-        String s2 = "3 ABC";
-        int nn = Integer.parseInt(s2.split(" ")[0]);
+        if(ifresultNftInfo < 1 || resultGrid2 < 1) {
+            System.out.println("걸림 111");
+        } else {
+            System.out.println("안 걸림 222");
+        }
 
-        System.out.println(nn);
+
+
+
 
 
 
