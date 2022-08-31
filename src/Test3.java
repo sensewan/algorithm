@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -271,6 +272,75 @@ public class Test3 {
         } else {
             System.out.println("안 걸림 222");
         }
+
+        System.out.println();
+        System.out.println("========================================");
+        System.out.println("문자 작업");
+//        String goods_param = "gs_id:13,gcode:1657787715299,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.01,fee_unit_price:0.001/" +
+//                "gs_id:14,gcode:2222222222222,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.02,fee_unit_price:0.002";
+        String goods_param = "gs_id:13,gcode:1657787715299,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.01,fee_unit_price:0.001";
+
+        if(goods_param.indexOf(" ") != -1){
+            System.out.println("걸림 ------------------------------------------");
+            System.out.println(goods_param.indexOf(" "));
+        }else {
+            System.out.println("안 걸림 ---------------------------------------");
+            System.out.println(goods_param.indexOf(" "));
+        }
+
+        List<Object> goods_list = new ArrayList<Object>();
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> goodsDetail2 = new HashMap<>();
+
+
+
+        if(!goods_param.contains("/")) {
+            System.out.println("한개");
+
+//            String a1 = goods_param.split(",")[0];
+//            System.out.println(a1);
+//            System.out.println(a1.split(":")[0]);
+//            System.out.println(a1.split(":")[1]);
+            goods_list = Arrays.asList(goods_param);
+
+        } else {
+            System.out.println("여러개");
+            goods_list = Arrays.asList(goods_param.split("/"));
+
+//            System.out.println(goods_list);
+        }
+
+        List<Object> goods_list2 = new ArrayList<Object>();
+
+        for(int i = 0; i < goods_list.size(); i++) {
+            System.out.println();
+            System.out.println(goods_list.get(i).toString().split(",").length);
+            Map<String, Object> goodsDetail3 = new HashMap<>();
+
+            for (int j = 0; j < goods_list.get(i).toString().split(",").length; j++) {
+//                    System.out.println(goods_list.get(i).toString().split(",")[j]);
+                String goods = goods_list.get(i).toString().split(",")[j];
+//                System.out.println("goods: " + goods);
+                String key = goods.split(":")[0];
+                String value = goods.split(":")[1];
+//                    System.out.println("key: " + key);
+//                    System.out.println("value: " + value);
+
+                goodsDetail3.put(key, value);
+
+            }
+            goods_list2.add(goodsDetail3);
+            System.out.println(goodsDetail3);
+            System.out.println(goodsDetail3.get("gs_id"));
+        }
+        System.out.println("-----");
+        System.out.println(goods_list2);
+        @SuppressWarnings("unchecked")
+        Map<String, Object> goodsDetail3 = (Map<String, Object>) goods_list2.get(0);
+        System.out.println(goodsDetail3);
+        System.out.println(goodsDetail3.get("gs_id"));
+
 
 
 
