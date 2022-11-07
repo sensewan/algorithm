@@ -74,6 +74,8 @@ public class Test4 {
             System.out.println("안걸림!!");
         }
 
+        // 스쿼시 테스트1
+
 
 
 
