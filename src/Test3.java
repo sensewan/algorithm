@@ -276,9 +276,10 @@ public class Test3 {
         System.out.println();
         System.out.println("========================================");
         System.out.println("문자 작업");
-//        String goods_param = "gs_id:13,gcode:1657787715299,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.01,fee_unit_price:0.001/" +
-//                "gs_id:14,gcode:2222222222222,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.02,fee_unit_price:0.002";
-        String goods_param = "gs_id:13,gcode:1657787715299,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.01,fee_unit_price:0.001";
+        String goods_param = "gs_id:44,gcode:1659445835758,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:137,token_id:138,grid_no:null,joint_no:null,goods_price:10000,fee_unit_price:1000/" +
+                "gs_id:44,gcode:1659445835758,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:138,token_id:138,grid_no:null,joint_no:null,goods_price:10000,fee_unit_price:1000/" +
+                "gs_id:44,gcode:1659445835758,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:139,token_id:138,grid_no:null,joint_no:null,goods_price:10000,fee_unit_price:1000";
+//        String goods_param = "gs_id:13,gcode:1657787715299,quantity:1,goodstype:digital_nft,grid_publication:0,nid_no:null,token_id:null,grid_no:null,joint_no:null,goods_price:0.01,fee_unit_price:0.001";
 
         if(goods_param.indexOf(" ") != -1){
             System.out.println("걸림 ------------------------------------------");
@@ -315,7 +316,7 @@ public class Test3 {
 
         for(int i = 0; i < goods_list.size(); i++) {
             System.out.println();
-            System.out.println(goods_list.get(i).toString().split(",").length);
+//            System.out.println(goods_list.get(i).toString().split(",").length);
             Map<String, Object> goodsDetail3 = new HashMap<>();
 
             for (int j = 0; j < goods_list.get(i).toString().split(",").length; j++) {
