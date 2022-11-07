@@ -74,6 +74,10 @@ public class Test4 {
             System.out.println("안걸림!!");
         }
 
+        // 스쿼시 테스트1
+        // 스쿼시 테스트2
+        // 스쿼시 테스트3
+
 
 
 
