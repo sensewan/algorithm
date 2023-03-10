@@ -214,6 +214,19 @@ public class Test3 {
 
 
 
+        System.out.println("--------------------------------------------");
+
+        String u1= "12";
+        String u2= "13";
+        if(!u1.equals(u2)) {
+            System.out.println("걸림");
+        }else {
+            System.out.println("통과");
+        }
+
+
+
+
 
     }
 
